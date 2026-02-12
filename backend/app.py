@@ -11,7 +11,7 @@ MONGO_URI = os.getenv('MONGO_URI')
 client = MongoClient(MONGO_URI)
 db = client.dockeruser
 collection = db.users
-
+print('app is running succefully')
 @app.route("/add-user", methods=["POST"])
 def add_user():
     data = request.json
