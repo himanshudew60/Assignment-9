@@ -1,0 +1,17 @@
+
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb+srv://sample:sample%40123@cluster0.dhoae18.mongodb.net/?retryWrites=true&w=majority
+    
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
